@@ -667,6 +667,40 @@
             border-radius: 10px;
             margin-top: 30px;
         }
+
+        /* Scroll-to-top button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            z-index: 999;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
     </style>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=bf7cae19-420d-45d6-95fb-0757f236daa8&lang=ru_RU" type="text/javascript"></script>
 </head>
@@ -710,7 +744,7 @@
             </div>
             <div class="about-content">
                 <div class="about-img">
-                    <img src="andrew_rope.jpg" alt="Черныш Андрей" loading="lazy">
+                    <img src="andrew_rope.jpg" alt="Черныш Андрей">
                 </div>
                 <div class="about-text">
                     <h2>Черныш Андрей</h2>
@@ -745,7 +779,7 @@
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="personal.jfif" alt="Индивидуальные тренировки" loading="lazy">
+                    <img src="personal.jfif" alt="Индивидуальные тренировки">
                     <div class="service-card-content">
                         <h3>Индивидуальные тренировки</h3>
                         <p>Персональные занятия под ваш уровень подготовки и цели. Уделяю максимум внимания каждой тренировке.</p>
@@ -754,7 +788,7 @@
                 </div>
                 
                 <div class="service-card">
-                    <img src="group.jpg" alt="Групповые занятия" loading="lazy">
+                    <img src="group.jpg" alt="Групповые занятия">
                     <div class="service-card-content">
                         <h3>Групповые занятия</h3>
                         <p>Мотивирующая атмосфера для достижения результатов вместе. Группы до 8 человек.</p>
@@ -763,7 +797,7 @@
                 </div>
                 
                 <div class="service-card">
-                    <img src="online.jfif" alt="Онлайн-тренировки" loading="lazy">
+                    <img src="online.jfif" alt="Онлайн-тренировки">
                     <div class="service-card-content">
                         <h3>Онлайн-тренировки</h3>
                         <p>Индивидуальные программы и тренировки онлайн. Доступ в любое время из любой точки мира.</p>
@@ -782,17 +816,17 @@
             </div>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
-                    <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Клиент 1" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Клиент 1">
                     <p class="testimonial-text">"Андрей - лучший тренер, с которым я когда-либо работал! Он помог мне не только достичь моих целей по снижению веса, но и полностью изменить мой образ жизни. Настоящий профессионал!"</p>
                     <p class="testimonial-author">- Иван Петров</p>
                 </div>
                 <div class="testimonial-card">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Клиент 2" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Клиент 2">
                     <p class="testimonial-text">"Благодаря групповым занятиям у Андрея я нашла новых друзей и мотивацию заниматься регулярно. Атмосфера на тренировках просто потрясающая, всегда ухожу с зарядом бодрости!"</p>
                     <p class="testimonial-author">- Мария Сидорова</p>
                 </div>
                 <div class="testimonial-card">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Клиент 3" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Клиент 3">
                     <p class="testimonial-text">"Онлайн-тренировки с Андреем - это супер удобно и эффективно. Программа составляется индивидуально, а тренер всегда на связи. Результаты превзошли все мои ожидания!"</p>
                     <p class="testimonial-author">- Алексей Иванов</p>
                 </div>
@@ -892,6 +926,11 @@
         </div>
     </footer>
 
+    <!-- Scroll-to-top button -->
+    <a href="#" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
     <script>
         // Sticky header
         window.addEventListener('scroll', function() {
@@ -973,6 +1012,25 @@
 
             myMap.geoObjects.add(myPlacemark);
         }
+
+        // Scroll-to-top button logic
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     </script>
 </body>
 </html>
