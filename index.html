@@ -313,12 +313,26 @@
             box-shadow: var(--shadow);
             transition: var(--transition);
             text-align: center;
-            padding: 40px 25px;
+            display: flex;
+            flex-direction: column;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-card-content {
+            padding: 30px 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .service-icon {
@@ -343,6 +357,7 @@
         .service-card p {
             margin-bottom: 20px;
             color: #666;
+            flex-grow: 1;
         }
 
         /* Contact Section */
@@ -679,39 +694,30 @@
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-running"></i>
+                    <img src="personal.jfif" alt="Индивидуальные тренировки">
+                    <div class="service-card-content">
+                        <h3>Индивидуальные тренировки</h3>
+                        <p>Персональные занятия под ваш уровень подготовки и цели. Уделяю максимум внимания каждой тренировке.</p>
+                        <a href="#contact" class="btn btn-outline">Записаться</a>
                     </div>
-                    <h3>Индивидуальные тренировки</h3>
-                    <p>Персональные занятия под ваш уровень подготовки и цели. Уделяю максимум внимания каждой тренировке.</p>
-                    <a href="#contact" class="btn btn-outline">Записаться</a>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-users"></i>
+                    <img src="group.jpg" alt="Групповые занятия">
+                    <div class="service-card-content">
+                        <h3>Групповые занятия</h3>
+                        <p>Мотивирующая атмосфера для достижения результатов вместе. Группы до 8 человек.</p>
+                        <a href="#contact" class="btn btn-outline">Записаться</a>
                     </div>
-                    <h3>Групповые занятия</h3>
-                    <p>Мотивирующая атмосфера для достижения результатов вместе. Группы до 8 человек.</p>
-                    <a href="#contact" class="btn btn-outline">Записаться</a>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop"></i>
+                    <img src="online.jfif" alt="Онлайн-тренировки">
+                    <div class="service-card-content">
+                        <h3>Онлайн-тренировки</h3>
+                        <p>Индивидуальные программы и тренировки онлайн. Доступ в любое время из любой точки мира.</p>
+                        <a href="#contact" class="btn btn-outline">Записаться</a>
                     </div>
-                    <h3>Онлайн-тренировки</h3>
-                    <p>Индивидуальные программы и тренировки онлайн. Доступ в любое время из любой точки мира.</p>
-                    <a href="#contact" class="btn btn-outline">Записаться</a>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <h3>Программы питания</h3>
-                    <p>Составление индивидуального питания для достижения целей по набору мышечной массы или похудению.</p>
-                    <a href="#contact" class="btn btn-outline">Записаться</a>
                 </div>
             </div>
         </div>
