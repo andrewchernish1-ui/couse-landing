@@ -667,6 +667,38 @@
             border-radius: 10px;
             margin-top: 30px;
         }
+
+        .back-to-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+            z-index: 999;
+        }
+
+        .back-to-top-btn.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
     </style>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=bf7cae19-420d-45d6-95fb-0757f236daa8&lang=ru_RU" type="text/javascript"></script>
 </head>
@@ -892,6 +924,11 @@
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button class="back-to-top-btn" title="Наверх">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script>
         // Sticky header
         window.addEventListener('scroll', function() {
@@ -973,6 +1010,24 @@
 
             myMap.geoObjects.add(myPlacemark);
         }
+
+        // Back to Top Button
+        const backToTopButton = document.querySelector('.back-to-top-btn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     </script>
 </body>
 </html>
